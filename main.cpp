@@ -1,25 +1,42 @@
 #include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <vector>
+using namespace std;
+#include <sstream>
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+using namespace std;
+void readCSV();
 int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the
-    // <b>lang</b> variable name to see how CLion can help you rename it.
-    auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+    readCSV();
+    return 0;
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code.
-        // We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/>
-        // breakpoint for you, but you can always add more by pressing
-        // <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
+}
+void readCSV() {
+    ifstream fin("football.csv");
+    string line;
+    vector<vector<string>> data;
+    while (getline(fin, line)) {
+        istringstream iss(line);
+        vector<string> row;
+        string cell;
+        while (getline(iss, cell, ',')) {
+            row.push_back(cell);
+        }
+        data.push_back(row);
+    }
+    fin.close();
+
+    for (size_t i = 0; i < data.size(); i++) {
+        cout<<left<<setw(20)<<data[i][0]
+        <<setw(15)<<data[i][1]
+        <<setw(5)<<data[i][2]
+        <<setw(8)<<data[i][3]
+        <<setw(20)<<data[i][4]<<endl;
+
+
     }
 
-    return 0;
+
 }
 
-// TIP See CLion help at <a
-// href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>.
-//  Also, you can try interactive lessons for CLion by selecting
-//  'Help | Learn IDE Features' from the main menu.
