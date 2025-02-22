@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <map>
 #include <vector>
 using namespace std;
 #include <sstream>
@@ -92,12 +93,32 @@ void displayfindplayername(const vector<FootballPlayer>& players) {
 
 }
 
+map<string,int> countplayersByTeam(const vector<FootballPlayer>& players) {
+    map<string,int> teamCounts;
+    for (int i = 0; i < players.size(); i++) {
+        teamCounts[players[i].team]++;
+    }
+    return teamCounts;
+
+}
+
+void dispalyTeamCounts(const map<string,int>& teamCounts) {
+    for (const auto& count: teamCounts) {
+        cout<<left<<setw(20)<<count.first
+        <<setw(20)<<count.second<<endl;
+    }
+
+}
+
 int main() {
     string filename = "football.csv";
     vector<FootballPlayer> players;
     readCSV(filename, players);
     display(players);
     displayfindplayername(players);
+
+    map<string,int> teamCounts = countplayersByTeam(players);
+    dispalyTeamCounts(teamCounts);
     return 0;
 
 }
