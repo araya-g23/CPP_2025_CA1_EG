@@ -45,6 +45,13 @@ void readCSV(const string& filename, vector<FootballPlayer>& players) {
 }
 
 void display(const vector<FootballPlayer>& players) {
+
+    cout<<left<<setw(20)<<"Player Name"
+    <<setw(20)<<"Team"
+    <<setw(20)<<"Age"
+    <<setw(20)<<"Goals"
+    <<setw(20)<<"Rating"<<endl;
+
    for (int i = 0; i < players.size(); i++) {
        cout<< left<<setw(20)<<players[i].playername;
        cout<<setw(20)<<players[i].team;
@@ -57,11 +64,40 @@ void display(const vector<FootballPlayer>& players) {
 
 
 }
+int findplayername(const vector<FootballPlayer>& players,const string& name) {
+    for (size_t i = 0; i < players.size(); i++) {
+        if (players[i].playername == name) {
+            return i;
+        }
+    }
+    return -1;
+
+}
+void displayfindplayername(const vector<FootballPlayer>& players) {
+    cout<<"enter a player name to search: ";
+    string searchname;
+    getline(cin, searchname);
+    int index=findplayername(players,searchname);
+    if (index!=-1) {
+        cout<<"player found at index "<<index<<endl;
+        cout<<left<<setw(20)<<players[index].playername
+        <<setw(20)<<players[index].team
+        <<setw(20)<<players[index].age
+        <<setw(20)<<players[index].goals
+        <<setw(20)<<players[index].rating<<endl;
+    }
+    else {
+        cout<<"player not found"<<endl;
+    }
+
+}
+
 int main() {
     string filename = "football.csv";
     vector<FootballPlayer> players;
     readCSV(filename, players);
     display(players);
+    displayfindplayername(players);
     return 0;
 
 }
