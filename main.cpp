@@ -110,15 +110,64 @@ void dispalyTeamCounts(const map<string,int>& teamCounts) {
 
 }
 
+void filterByTame(vector<FootballPlayer>& players) {
+    cout<<"enter a team name: ";
+    string teamname;
+    bool found = false;
+    getline(cin, teamname);
+    for (const auto& player: players) {
+        if (player.team == teamname) {
+            found = true;
+            cout<<left<<setw(20)<<player.playername
+            <<setw(20)<<player.team
+            <<setw(20)<<player.age
+            <<setw(20)<<player.goals
+            <<setw(20)<<player.rating<<endl;
+        }
+
+    }
+    if (!found) {
+        cout<<"team not found"<<endl;
+    }
+
+}
+int calculateGoalStats(const vector<FootballPlayer>& players, FootballPlayer& highest, FootballPlayer& lowest) {
+//https://stackoverflow.com/questions/32447086/finding-the-highest-and-lowest-number
+    int totalGoals = 0;
+    highest=lowest=players[0];
+
+    for (int i = 1; i < players.size(); i++) {
+        if (players[i].goals > highest.goals) {
+            highest=players[i];
+        }
+        if (players[i].goals < lowest.goals) {
+            lowest=players[i];
+        }
+        totalGoals += players[i].goals;
+    }
+    return totalGoals/players.size();
+
+}
+void displayGoalStats(const vector<FootballPlayer>& players) {
+    FootballPlayer highest, lowest;
+    int averageGoals = calculateGoalStats(players, highest, lowest);
+
+    cout<<"higehest goal Scorer: "<<highest.playername<<" ( "<<highest.goals<<" )"<<endl;
+    cout<<"Lowest goal Scorer: "<<lowest.playername<<" ( "<<lowest.goals<<" )"<<endl;
+    cout << "Average Goal Scored: "<<averageGoals<<endl;
+}
 int main() {
     string filename = "football.csv";
     vector<FootballPlayer> players;
     readCSV(filename, players);
     display(players);
-    displayfindplayername(players);
+    //displayfindplayername(players);
 
     map<string,int> teamCounts = countplayersByTeam(players);
-    dispalyTeamCounts(teamCounts);
+    //dispalyTeamCounts(teamCounts);
+
+    //filterByTame(players);
+    displayGoalStats(players);
     return 0;
 
 }
