@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -156,18 +157,34 @@ void displayGoalStats(const vector<FootballPlayer>& players) {
     cout<<"Lowest goal Scorer: "<<lowest.playername<<" ( "<<lowest.goals<<" )"<<endl;
     cout << "Average Goal Scored: "<<averageGoals<<endl;
 }
+
+void sortByRating(vector<FootballPlayer>& players) {
+    auto func=[](const FootballPlayer& a, const FootballPlayer& b) {
+        return a.rating >   b.rating;
+    };
+    sort(players.begin(), players.end(), func);
+}
+
 int main() {
     string filename = "football.csv";
     vector<FootballPlayer> players;
     readCSV(filename, players);
-    display(players);
+    //display(players);
     //displayfindplayername(players);
 
     map<string,int> teamCounts = countplayersByTeam(players);
     //dispalyTeamCounts(teamCounts);
 
     //filterByTame(players);
-    displayGoalStats(players);
+    //displayGoalStats(players);
+
+    cout<<"Before Sorting by Rating: \n";
+    display(players);
+    sortByRating(players);
+
+    cout<<"After Sorting by Rating: \n";
+    display(players);
+
     return 0;
 
 }
