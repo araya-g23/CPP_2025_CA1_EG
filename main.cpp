@@ -165,6 +165,31 @@ void sortByRating(vector<FootballPlayer>& players) {
     sort(players.begin(), players.end(), func);
 }
 
+vector<FootballPlayer>searchPlayers(const vector<FootballPlayer>& players, const string& name) {
+    vector<FootballPlayer> playerName;
+    for (int i = 0; i < players.size(); i++) {
+        if (players[i].playername.find(name) != string::npos) {
+            playerName.push_back(players[i]);
+        }
+    }
+    return playerName;
+
+}
+void displaySearchPlayers(const vector<FootballPlayer>& players) {
+    cout<<"enter a player name: ";
+    string search;
+    getline(cin, search);
+    vector<FootballPlayer> results=searchPlayers(players, search);
+
+    if (!results.empty()) {
+        cout<<"players found: \n";
+        display(results);
+    }
+    else {
+        cout<<"player not found\n"<<endl;
+    }
+}
+
 int main() {
     string filename = "football.csv";
     vector<FootballPlayer> players;
@@ -184,6 +209,8 @@ int main() {
 
     cout<<"After Sorting by Rating: \n";
     display(players);
+
+    displaySearchPlayers(players);
 
     return 0;
 
