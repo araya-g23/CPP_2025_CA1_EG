@@ -54,6 +54,11 @@ void display(const vector<FootballPlayer>& players) {
     <<setw(20)<<"Goals"
     <<setw(20)<<"Rating"<<endl;
 
+
+    cout<<fixed<<setprecision(2);
+
+    cout<<"**************************************************************************************"<<endl;
+
    for (int i = 0; i < players.size(); i++) {
        cout<< left<<setw(20)<<players[i].playername;
        cout<<setw(20)<<players[i].team;
@@ -83,11 +88,25 @@ void displayfindplayername(const vector<FootballPlayer>& players) {
     int index=findplayername(players,searchname);
     if (index!=-1) {
         cout<<"player found at index "<<index<<endl;
+        cout<<left<<setw(20)<<"Player Name"
+        <<setw(20)<<"Team"
+        <<setw(20)<<"Age"
+        <<setw(20)<<"Goals"
+        <<setw(20)<<"Rating"<<endl;
+
+
+        cout<<fixed<<setprecision(2);
+
+        cout<<"**************************************************************************************"<<endl;
+
         cout<<left<<setw(20)<<players[index].playername
         <<setw(20)<<players[index].team
         <<setw(20)<<players[index].age
         <<setw(20)<<players[index].goals
         <<setw(20)<<players[index].rating<<endl;
+
+        cout<<"**************************************************************************************"<<endl;
+
     }
     else {
         cout<<"player not found"<<endl;
@@ -105,6 +124,8 @@ map<string,int> countplayersByTeam(const vector<FootballPlayer>& players) {
 }
 
 void dispalyTeamCounts(const map<string,int>& teamCounts) {
+    cout<<left<<setw(20)<<"Team"
+    <<setw(20)<<"Count"<<endl;
     for (const auto& count: teamCounts) {
         cout<<left<<setw(20)<<count.first
         <<setw(20)<<count.second<<endl;
@@ -118,6 +139,17 @@ void filterByTame(vector<FootballPlayer>& players) {
     string teamname;
     bool found = false;
     getline(cin, teamname);
+    cout<<left<<setw(20)<<"Player Name"
+        <<setw(20)<<"Team"
+        <<setw(20)<<"Age"
+        <<setw(20)<<"Goals"
+        <<setw(20)<<"Rating"<<endl;
+
+
+    cout<<fixed<<setprecision(2);
+
+    cout<<"**************************************************************************************"<<endl;
+
     for (const auto& player: players) {
         if (player.team == teamname) {
             found = true;
@@ -126,6 +158,8 @@ void filterByTame(vector<FootballPlayer>& players) {
             <<setw(20)<<player.age
             <<setw(20)<<player.goals
             <<setw(20)<<player.rating<<endl;
+            cout<<"**************************************************************************************"<<endl;
+
         }
 
     }
@@ -249,54 +283,11 @@ int main() {
     string filename = "football.csv";
     vector<FootballPlayer> players;
     readCSV(filename, players);
-    //display(players);
-    //displayfindplayername(players);
-
-    //map<string,int> teamCounts = countplayersByTeam(players);
-    //dispalyTeamCounts(teamCounts);
-
-    //filterByTame(players);
-    //displayGoalStats(players);
-
-    // cout<<"Before Sorting by Rating: \n";
-    // display(players);
-    // sortByRating(players);
-    //
-    // cout<<"After Sorting by Rating: \n";
-    // display(players);
-    //
-    // displaySearchPlayers(players);
     menu(players);
 
 
     return 0;
 
 }
-// void readCSV() {
-//     ifstream fin("football.csv");
-//     string line;
-//     vector<vector<string>> data;
-//     while (getline(fin, line)) {
-//         istringstream iss(line);
-//         vector<string> row;
-//         string cell;
-//         while (getline(iss, cell, ',')) {
-//             row.push_back(cell);
-//         }
-//         data.push_back(row);
-//     }
-//     fin.close();
-//
-//     for (size_t i = 0; i < data.size(); i++) {
-//         cout<<left<<setw(20)<<data[i][0]
-//         <<setw(15)<<data[i][1]
-//         <<setw(5)<<data[i][2]
-//         <<setw(8)<<data[i][3]
-//         <<setw(20)<<data[i][4]<<endl;
-//
-//
-//     }
-//
-//
-// }
+
 

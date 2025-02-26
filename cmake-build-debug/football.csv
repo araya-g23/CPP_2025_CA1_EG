@@ -1,6 +1,101 @@
-PlayerName,Team,Age,Goals,AverageRating
-Lionel Messi,Inter Miami,36,18,8.7
-Cristiano Ronaldo,Al Nassr,39,22,8.5
-Kylian Mbappe,PSG,25,25,8.9
-Erling Haaland,Man City,23,30,9.1
-Kevin De Bruyne,Man City,32,12,8.4
+Player Name,Team,Age,Goals,Rating
+Manuel Neuer,Bayern Munich,37,0,8.2532
+Vinicius Jr,Real Madrid,23,19,8.835
+Bruno Fernandes,Man United,29,10,8.4542
+Karim Benzema,Al-Ittihad,36,21,8.7434
+Alisson Becker,Liverpool,31,0,8.296
+Joao Felix,Barcelona,24,12,8.625
+Cristiano Ronaldo,Al Nassr,39,22,8.5956
+Joshua Kimmich,Bayern Munich,29,5,8.424
+Phil Foden,Man City,23,17,8.7287
+Luka Modric,Real Madrid,38,5,8.435
+Sadio Mane,Al-Nassr,31,13,8.5564
+Vinicius Jr,Real Madrid,23,19,8.856
+Erling Haaland,Man City,23,30,8.875
+Frenkie de Jong,Barcelona,26,5,8.845
+Kylian Mbappe,PSG,25,25,8.805
+Theo Hernandez,AC Milan,26,4,8.865
+Lionel Messi,Inter Miami,36,18,8.895
+Theo Hernandez,AC Milan,26,4,8.857
+Bukayo Saka,Arsenal,22,16,8.685
+Victor Osimhen,Napoli,25,22,8.8875
+Mohamed Salah,Liverpool,31,20,8.859
+Gavi,Barcelona,19,4,7.857
+Marquinhos,PSG,29,2,8.875
+Andre Onana,Man United,28,0,6.857
+Matthijs de Ligt,Bayern Munich,24,2,6.8578
+Toni Kroos,Real Madrid,34,3,6.856
+Ruben Dias,Man City,26,3,7.85
+Harry Kane,Bayern Munich,30,28,6.885
+Ederson,Man City,30,0,6.835
+Ansu Fati,Brighton,21,7,6.815
+Kvaratskhelia,Napoli,23,14,6.815
+Jules Kounde,Barcelona,25,3,7.845
+Antonio Rudiger,Real Madrid,30,2,7.856
+Achraf Hakimi,PSG,25,5,6.895
+Jules Kounde,Barcelona,25,3,6.685
+Cristiano Ronaldo,Al Nassr,39,22,6.785
+Thibaut Courtois,Real Madrid,32,0,7.285
+Jude Bellingham,Real Madrid,20,18,6.285
+Manuel Neuer,Bayern Munich,37,0,7.685
+Gavi,Barcelona,19,4,8.285
+Trent ,Liverpool,25,3,7.285
+Andrew Robertson,Liverpool,30,2,7.856
+Toni Kroos,Real Madrid,34,3,7.485
+Rafael Leao,AC Milan,24,15,7.285
+Rodri,Man City,27,6,6.285
+Robert Lewandowski,Barcelona,35,23,6.685
+Robert Lewandowski,Barcelona,35,23,6.785
+Thibaut Courtois,Real Madrid,32,0,6.885
+Victor Osimhen,Napoli,25,22,6.185
+Virgil van Dijk,Liverpool,32,3,6.285
+Kylian Mbappe,PSG,25,25,6.185
+Bukayo Saka,Arsenal,22,16,6.285
+Donnarumma,PSG,25,0,7.185
+Martin Odegaard,Arsenal,25,11,9.885
+Bernardo Silva,Man City,29,8,7.285
+Karim Benzema,Al-Ittihad,36,21,6.285
+Pedri,Barcelona,21,6,7.85
+Neymar Jr,Al-Hilal,32,15,6.212
+Mohamed Salah,Liverpool,31,20,7.185
+Rodri,Man City,27,6,7.285
+Matthijs de Ligt,Bayern Munich,24,2,6.385
+Jude Bellingham,Real Madrid,20,18,9.485
+Andrew Robertson,Liverpool,30,2,7.685
+Joshua Kimmich,Bayern Munich,29,5,6.585
+Pedri,Barcelona,21,6,8.985
+Ruben Dias,Man City,26,3,9.185
+Ter Stegen,Barcelona,31,0,6.285
+Declan Rice,Arsenal,25,4,7.385
+Lionel Messi,Inter Miami,36,18,8.485
+Antonio Rudiger,Real Madrid,30,2,8.485
+Harry Kane,Bayern Munich,30,28,7.585
+Achraf Hakimi,PSG,25,5,8.685
+Kevin De Bruyne,Man City,32,12,7.285
+Donnarumma,PSG,25,0,9.685
+Frenkie de Jong,Barcelona,26,5,5.685
+Bernardo Silva,Man City,29,8,7.885
+Alisson Becker,Liverpool,31,0,8.685
+Lautaro Martinez,Inter Milan,26,21,6.185
+Phil Foden,Man City,23,17,6.685
+Rafael Leao,AC Milan,24,15,6.985
+Ansu Fati,Brighton,21,7,9.385
+Trent,Liverpool,25,3,8.285
+Virgil van Dijk,Liverpool,32,3,3.685
+Kevin De Bruyne,Man City,32,12,5.885
+Neymar Jr,Al-Hilal,32,15,8.785
+Joao Felix,Barcelona,24,12,7.985
+Luka Modric,Real Madrid,38,5,8.685
+Declan Rice,Arsenal,25,4,9.785
+Ederson,Man City,30,0,6.885
+Bruno Fernandes,Man United,29,10,8.485
+Martin Odegaard,Arsenal,25,11,9.985
+Lautaro Martinez,Inter Milan,26,21,8.985
+Kvaratskhelia,Napoli,23,14,6.385
+ter Stegen,Barcelona,31,0,6.985
+Marquinhos,PSG,29,2,7.285
+Erling Haaland,Man City,23,30,7.685
+Sadio Mane,Al-Nassr,31,13,8.985
+Andre Onana,Man United,28,0,8.885
+Coe Palmer,Chelsea,20,10,8.885
+Diaz,Liverpool,25,10,7.777
