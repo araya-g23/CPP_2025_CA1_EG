@@ -77,6 +77,7 @@ int findplayername(const vector<FootballPlayer>& players,const string& name) {
 }
 void displayfindplayername(const vector<FootballPlayer>& players) {
     cout<<"enter a player name to search: ";
+    cin.ignore();
     string searchname;
     getline(cin, searchname);
     int index=findplayername(players,searchname);
@@ -113,6 +114,7 @@ void dispalyTeamCounts(const map<string,int>& teamCounts) {
 
 void filterByTame(vector<FootballPlayer>& players) {
     cout<<"enter a team name: ";
+    cin.ignore();
     string teamname;
     bool found = false;
     getline(cin, teamname);
@@ -177,6 +179,7 @@ vector<FootballPlayer>searchPlayers(const vector<FootballPlayer>& players, const
 }
 void displaySearchPlayers(const vector<FootballPlayer>& players) {
     cout<<"enter a player name: ";
+    cin.ignore();
     string search;
     getline(cin, search);
     vector<FootballPlayer> results=searchPlayers(players, search);
@@ -189,6 +192,58 @@ void displaySearchPlayers(const vector<FootballPlayer>& players) {
         cout<<"player not found\n"<<endl;
     }
 }
+void menu(vector<FootballPlayer>& players) {
+    int option;
+    do {
+        cout<<"enter option: \n"
+        <<"[1]. Display all players\n"
+        <<"[2]. Search for a player by name\n"
+        << "[3]. Count players by team\n"
+        << "[4]. Filter players by team\n"
+        << "[5]. Show goal statistics\n"
+        << "[6]. Sort players by rating( descending )\n"
+        << "[7]. Search players by partial name\n"
+        << "[8]. Exit\n";
+        cin>>option;
+        switch (option) {
+            case 1:
+                display(players);
+            break;
+            case 2:
+                displayfindplayername(players);
+            break;
+            case 3:
+                //map<string,int> teamCounts = countplayersByTeam(players);
+                dispalyTeamCounts(countplayersByTeam(players));
+            break;
+            case 4:
+                filterByTame(players);
+            break;
+            case 5:
+                displayGoalStats(players);
+            break;
+            case 6:
+                cout<<"Before Sorting by Rating: \n";
+                display(players);
+                sortByRating(players);
+
+                cout<<"After Sorting by Rating: \n";
+                display(players);
+            break;
+            case 7:
+                displaySearchPlayers(players);
+            break;
+            case 8:
+                cout<<"Exit\n";
+            break;
+            default:
+                cout<<"Invalid option\n";
+
+        }
+
+    }
+    while(option!=8);
+}
 
 int main() {
     string filename = "football.csv";
@@ -197,20 +252,22 @@ int main() {
     //display(players);
     //displayfindplayername(players);
 
-    map<string,int> teamCounts = countplayersByTeam(players);
+    //map<string,int> teamCounts = countplayersByTeam(players);
     //dispalyTeamCounts(teamCounts);
 
     //filterByTame(players);
     //displayGoalStats(players);
 
-    cout<<"Before Sorting by Rating: \n";
-    display(players);
-    sortByRating(players);
+    // cout<<"Before Sorting by Rating: \n";
+    // display(players);
+    // sortByRating(players);
+    //
+    // cout<<"After Sorting by Rating: \n";
+    // display(players);
+    //
+    // displaySearchPlayers(players);
+    menu(players);
 
-    cout<<"After Sorting by Rating: \n";
-    display(players);
-
-    displaySearchPlayers(players);
 
     return 0;
 
